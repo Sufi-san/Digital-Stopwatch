@@ -1,3 +1,17 @@
+import './stopwatch.css';
+
+document.querySelector('#app').innerHTML = `
+    <header><span id="my-name">Sufi's</span><span id="app-name">Digital StopWatch</span></header>
+    <main>
+        <div id="mode-btn-div"><button id="dark-mode-btn">Dark Mode: OFF</button></div>
+        <div id="clock-display">00 : 00 : 00.00</div>
+        <div id="clock-control">
+            <button id="start-stop-btn">Start</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+    </main>
+`;
+
 let milliSec = 0, runInterval = 0, darkModeON = false, watchRunning = false;
 
 const docBody = document.body;
@@ -38,7 +52,7 @@ startStopBtn.addEventListener('click', () => {
 });
 
 resetBtn.addEventListener('click', () => {
-    milliSec = seconds = minutes = hours = 0;
+    milliSec = 0;
     startStopBtn.innerHTML = 'Start';
     watchRunning = false;
     haltStopWatch();
